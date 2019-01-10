@@ -23,5 +23,5 @@ API :
 # Access Denied
 <img src="https://github.com/KNIGHTMASTER/Resources/blob/master/SPRING-LOGIN-REGISTER/login-3.png?raw=true" alt="spring-login-register"/>
 
-# Registration Pageg
+# Registration Page
 <img src="https://github.com/KNIGHTMASTER/Resources/blob/master/SPRING-LOGIN-REGISTER/registration-1.png?raw=true" alt="spring-login-register"/>
