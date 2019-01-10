@@ -64,6 +64,7 @@ public class SecurityBasicConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/login").permitAll()
                 .antMatchers("/auth/principal").permitAll()
                 .antMatchers("/auth/findUser").permitAll()
+                .antMatchers("/registration/**").permitAll()
                 .antMatchers("/auth/logout/**").hasAnyRole(Role.ADMIN, Role.USER, Role.ACTUATOR)
                 .anyRequest().authenticated()
                 .and().httpBasic().authenticationEntryPoint(basicAuthEntryPoint)

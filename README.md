@@ -20,3 +20,4 @@ API :
 
 <img src="https://github.com/KNIGHTMASTER/Resources/blob/master/SPRING-LOGIN-REGISTER/login-3.png?raw=true" alt="spring-login-register"/>
 
+<img src="https://github.com/KNIGHTMASTER/Resources/blob/master/SPRING-LOGIN-REGISTER/registration-1.png?raw=true" alt="spring-login-register"/>

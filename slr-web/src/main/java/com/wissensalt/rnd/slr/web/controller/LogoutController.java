@@ -1,6 +1,6 @@
 package com.wissensalt.rnd.slr.web.controller;
 
-import com.wissensalt.rnd.slr.shared.data.dto.ResponseDataDTO;
+import com.wissensalt.rnd.slr.web.CookieUtil;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -22,11 +22,12 @@ public class LogoutController {
 
     @GetMapping("/perform")
     public String performLogout(HttpServletRequest p_Request, HttpServletResponse p_Response) {
-        ResponseDataDTO result = new ResponseDataDTO ("201", "Logout Failed");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null){
+            CookieUtil.clearBasicAuth(p_Request, p_Response, auth);
             new SecurityContextLogoutHandler().logout(p_Request, p_Response, auth);
-            return "index";
+            auth.setAuthenticated(false);
+            SecurityContextHolder.getContext().setAuthentication(auth);
         }
         return "admin";
     }
