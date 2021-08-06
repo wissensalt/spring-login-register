@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  slr-web:
+    container_name: slr-web
+    build:
+      context: ./slr-web
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - slr-network
+    depends_on:
+      - api
+  slr-api:
+    container_name: slr-api
+    build:
+      context: ./slr-api
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - slr-network
+    depends_on:
+      - slr-mysql
+  slr-mysql:
+    image: mysql:5.7
+    container_name: slr-mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    networks:
+      - slr-network
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: slr
+      MYSQL_USER: slr
+      MYSQL_PASSWORD: password
+
+networks:
+  slr-network:
+
+volumes:
+  db_data: {}

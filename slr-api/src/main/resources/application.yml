@@ -20,15 +20,17 @@ spring:
           hibernate:
             dialect : org.hibernate.dialect.MySQL5Dialect
             ddl-auto : validate     # Hibernate ddl auto (create, create-drop, validate, update)
+  flyway:
+    enabled: true
 
 #============================================================================
 # DATABASE
 #============================================================================
 db:
-  name : spring_login_register
-  host : localhost
+  name : slr
+  host : slr-mysql
   port : 3306
-  username : root
-  password : P@ssw0rd
+  username : slr
+  password : password
   auto-reconnect : true
   ssl : false

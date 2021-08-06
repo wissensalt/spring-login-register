@@ -17,4 +17,4 @@ logging:
               feign: DEBUG
 
 api:
-  base-path : http://localhost:8081
+  base-path : http://slr-api:8081
